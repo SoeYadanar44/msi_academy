@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap');
+
+/* --- Reset & Baseline Typographic Grid --- */
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans Myanmar', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.8 !important; 
+}
+
+/* Specific fix for question text to keep it perfectly legible */
+#question-text {
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+}
+
+.heading-font {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* --- Smooth Fade-In Sequence --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); filter: blur(2px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- Premium Selection Elements --- */
+.question-card {
+  box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.06);
+}
+
+.answer-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0; /* Slate 200 */
+  transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+}
+
+/* Soft Premium Light Hover States */
+.answer-card:hover {
+  border-color: #6366f1; /* Indigo 500 */
+  background: #fafafa;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px -8px rgba(99, 102, 241, 0.12);
+}
+
+/* Left Label Ring Upgrades */
+.opt-badge {
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.answer-card:hover .opt-badge {
+  transform: scale(1.04);
+  background-color: #e0e7ff; /* Indigo 100 */
+  border-color: #818cf8;
+  color: #4f46e5;
+}
+
+/* Micro Click Scaling */
+.answer-card:active {
+  transform: scale(0.99);
+}
+
+/* --- Native Linear Progress Transitions --- */
+.progress-bar {
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
