@@ -188,7 +188,7 @@ function showQuestion() {
       const letter = alphaIndex[index]; 
       const div = document.createElement("div");
       
-      // Reduced inner padding from p-4 md:p-5 to a more compact p-3 md:p-4
+      
       div.className = "answer-card p-3 md:p-4 rounded-xl cursor-pointer flex gap-3 items-center font-medium shadow-sm group transition-all duration-300";
 
       div.innerHTML = `
@@ -238,14 +238,13 @@ function displayResults() {
 
   const profileData = majorDatabase[topLetter];
 
-  // Simplified title based on the dominant letter chosen
   document.getElementById("top-major").textContent = `သင်သည် ${topLetter} ကို အများဆုံးရွေးချယ်ခဲ့သည်။`;
   document.getElementById("top-desc").textContent = profileData.desc;
 
   const fieldsContainer = document.getElementById("fields-grid");
   fieldsContainer.innerHTML = "";
 
-  // Render centered targeted majors tags cleanly
+  
   profileData.fields.forEach(field => {
     const pill = document.createElement("span");
     pill.className = "px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 font-medium text-xs md:text-sm rounded-xl transition-colors cursor-default";

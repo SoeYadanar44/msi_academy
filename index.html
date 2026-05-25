@@ -6,140 +6,130 @@
   <title>MSI Academy • Aptitude Test</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-[#f8fafc] min-h-screen text-slate-800 selection:bg-indigo-100 overflow-x-hidden">
+<body class="body-theme">
 
-  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    <div class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-indigo-100/60 blur-[130px]"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-emerald-100/50 blur-[120px]"></div>
+  <div class="bg-blur-container">
+    <div class="blur-blob top-left-blob"></div>
+    <div class="blur-blob bottom-right-blob"></div>
   </div>
 
-  <div id="landing" class="relative z-10 min-h-screen flex items-center justify-center px-4 py-12">
+  <div id="landing" class="screen-layout flex items-center justify-center">
     <div class="max-w-3xl mx-auto text-center animate-fadeIn">
       
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/80 shadow-sm mb-8 text-xs font-semibold uppercase tracking-widest text-indigo-600">
-        <span class="w-2 h-2 rounded-full bg-indigo-800 animate-pulse"></span> Powered by MSI Academy
+      <div class="badge-pill">
+        <span class="badge-dot"></span> Powered by MSI Academy
       </div>
 
-      <div class="flex justify-center mb-6">
-        <div class="w-28 h-28 bg-white border border-slate-200/60 p-1 rounded-3xl flex items-center justify-center shadow-xl group hover:border-indigo-400 transition-all duration-500">
-          <img src="logo.png" class="w-24 h-24 object-contain transition-transform duration-500 group-hover:scale-105" alt="Logo">
+      <div class="logo-wrapper-large">
+        <div class="logo-container group">
+          <img src="logo.png" class="logo-img-large" alt="Logo">
         </div>
       </div>
 
-      <h1 class="heading-font text-5xl md:text-7xl font-black tracking-tight mb-4 text-slate-900">
-        <span class="text-red-700 font-extrabold tracking-normal">MSI</span> <span class="text-blue-900 font-extrabold tracking-normal">Academy</span>
+      <h1 class="main-heading">
+        <span class="brand-red">MSI</span> <span class="brand-indigo">Academy</span>
       </h1>
 
-      <p class="text-lg md:text-xl font-semibold text-slate-700 tracking-wide max-w-xl mx-auto mb-10">
+      <p class="sub-heading">
         Academic Aptitude Test
       </p>
 
-      <div class="bg-white/80 border border-slate-200 backdrop-blur-xl rounded-3xl p-8 mb-12 shadow-md max-w-2xl mx-auto">
-        <p class="text-base md:text-lg text-slate-700 leading-relaxed font-normal">
+      <div class="description-card">
+        <p class="description-text">
           Discover your ideal university pathway through our advanced multi-dimensional aptitude analysis engine.
         </p>
       </div>
 
-      <button onclick="startTest()"
-        class="px-10 py-5 bg-indigo-900 hover:bg-slate-800 text-white rounded-2xl text-lg font-bold shadow-lg shadow-slate-900/10 hover:-translate-y-0.5 transition-all duration-300 active:translate-y-0">
+      <button onclick="startTest()" class="btn-primary">
         START TEST <i class="fa-solid fa-arrow-right ml-2 text-sm opacity-80"></i>
       </button>
 
     </div>
   </div>
 
-  <div id="test-container" class="hidden relative z-10 min-h-screen flex flex-col">
+  <div id="test-container" class="hidden screen-layout flex flex-col">
 
-    <div class="sticky top-0 bg-white border-b border-slate-200/80 z-50 shadow-sm">
-      <div class="max-w-5xl mx-auto px-4 py-2.5 flex items-center justify-between gap-2">
+    <div class="sticky-header">
+      <div class="header-content">
 
-        <div class="flex items-center gap-2.5 min-w-0">
-          <img src="logo.png" class="w-12 md:w-20 h-12 md:h-20 object-contain flex-shrink-0" alt="Logo">
+        <div class="header-brand-group">
+          <img src="logo.png" class="header-logo" alt="Logo">
           <div class="min-w-0">
-            <p class="font-black tracking-tight text-base md:text-2xl text-slate-900 leading-none">
-              <span class="text-red-800">MSI</span>
-              <span class="text-blue-900">Academy</span>
+            <p class="header-title">
+              <span class="brand-red-dark">MSI</span>
+              <span class="brand-blue-dark">Academy</span>
             </p>
-            <p class="text-[9px] md:text-xs uppercase font-extrabold tracking-widest text-indigo-950 mt-1 opacity-80 truncate">
+            <p class="header-subtitle">
               Aptitude Profile
             </p>
           </div>
         </div>
 
-        <div class="flex items-center gap-3 flex-shrink-0">
-          <div class="text-[10px] md:text-xs font-bold tracking-wider text-slate-500 uppercase whitespace-nowrap">
-            Progress <span id="current-q" class="text-sm md:text-base font-black text-indigo-900 ml-0.5">1</span><span class="text-slate-400">/10</span>
+        <div class="progress-container">
+          <div class="progress-text">
+            Progress <span id="current-q" class="progress-current">1</span><span class="text-slate-400">/10</span>
           </div>
-          <div class="w-16 sm:w-24 md:w-36 h-2 bg-slate-100 rounded-full overflow-hidden">
-            <div id="progress" class="progress-bar h-full bg-gradient-to-r from-red-600 to-blue-700 rounded-full" style="width:0%"></div>
+          <div class="progress-track">
+            <div id="progress" class="progress-bar" style="width:0%"></div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <div class="flex-1 max-w-5xl w-full mx-auto px-4 py-8 flex flex-col justify-center">
-      <div class="question-card bg-white border border-slate-200 rounded-3xl p-6 md:p-10 shadow-xl relative overflow-hidden">
-        
-        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-blue-700"></div>
+    <div class="main-content-layout">
+      <div class="question-card">
+        <div class="card-top-bar"></div>
 
         <div class="mb-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-50 border border-indigo-100 text-indigo-900 font-black text-xs tracking-widest uppercase mb-4">
+          <div class="question-badge">
             Question <span id="q-num">01</span>
           </div>
-          <h2 id="question-text" class="text-xl md:text-2xl font-bold leading-relaxed text-slate-900 tracking-normal">
-            </h2>
+          <h2 id="question-text"></h2>
         </div>
 
-        <div id="answers" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          </div>
+        <div id="answers" class="answers-grid"></div>
 
       </div>
     </div>
   </div>
 
-  <div id="results" class="hidden relative z-10 min-h-screen flex items-center justify-center px-4 py-16">
+  <div id="results" class="hidden screen-layout flex items-center justify-center py-16">
     <div class="max-w-xl w-full">
-      <div class="bg-white border border-slate-200 rounded-[2.5rem] p-6 md:p-10 shadow-2xl text-center relative overflow-hidden">
+      <div class="results-card">
         
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-indigo-100/50 rounded-full blur-[60px] pointer-events-none"></div>
+        <div class="results-blur-bg"></div>
 
         <div class="flex justify-center mb-4 relative z-10">
-          <div class="w-16 h-16 bg-white border border-slate-200/80 p-2 rounded-2xl flex items-center justify-center shadow-md">
+          <div class="results-logo-box">
             <img src="logo.png" class="w-16 h-16 object-contain" alt="Logo">
           </div>
         </div>
 
-        <p class="text-[11px] uppercase font-extrabold tracking-widest text-[#4f46e5]/90 mb-2">Dominant Core Profile Identified</p>
-        
-        <h1 id="top-major" class="text-xl md:text-2xl font-black mb-8 text-slate-900 tracking-tight"></h1>
+        <p class="results-tagline">Dominant Core Profile Identified</p>
+        <h1 id="top-major" class="results-heading"></h1>
 
-        <div class="bg-slate-50/60 border border-slate-100 text-center rounded-2xl p-5 mb-8">
+        <div class="results-desc-box">
           <p id="top-desc" class="text-slate-800 text-sm leading-relaxed font-normal"></p>
         </div>
 
         <div class="text-center mb-8">
-          <h3 class="text-xs uppercase font-extrabold tracking-widest text-indigo-900/60 mb-4 flex items-center justify-center gap-2">
+          <h3 class="fields-heading">
             <i class="fa-solid fa-compass text-indigo-900 text-xs"></i> Potential Fields to Consider
           </h3>
-          <div id="fields-grid" class="flex flex-wrap justify-center gap-2"></div>
+          <div id="fields-grid" class="fields-flex-box"></div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 max-w-xs mx-auto shadow-sm mb-2">
-          <p class="text-[10px] font-extrabold uppercase tracking-widest text-slate-600 mb-1">
-            Aptitude Match Affinity Index
-          </p>
-          <div id="fit-score" class="text-4xl font-black text-[#1e1b4b] tracking-tighter"></div>
+        <div class="affinity-score-card">
+          <p class="affinity-tag">Aptitude Match Affinity Index</p>
+          <div id="fit-score" class="affinity-score"></div>
         </div>
 
-        <button onclick="window.location.reload()"
-            class="mt-6 w-full max-w-xs py-4 bg-[#0f172a] hover:bg-blue-900 text-white rounded-xl font-bold tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300">
+        <button onclick="window.location.reload()" class="btn-secondary group">
             <i class="fa-solid fa-rotate-right mr-2 text-xs opacity-70 group-hover:rotate-180 transition-transform duration-500"></i> Retake Analysis
         </button>
       </div>
