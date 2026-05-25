@@ -110,8 +110,8 @@
         
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-indigo-100/50 rounded-full blur-[60px] pointer-events-none"></div>
 
-        <div class="flex justify-center mb-4">
-          <div class="w-16 h-16 bg-slate-50 border border-slate-100 p-2 rounded-2xl flex items-center justify-center shadow-md">
+        <div class="flex justify-center mb-4 relative z-10">
+          <div class="w-16 h-16 bg-white border border-slate-200/80 p-2 rounded-2xl flex items-center justify-center shadow-md">
             <img src="logo.png" class="w-16 h-16 object-contain" alt="Logo">
           </div>
         </div>
@@ -121,7 +121,7 @@
         <h1 id="top-major" class="text-xl md:text-2xl font-black mb-8 text-slate-900 tracking-tight"></h1>
 
         <div class="bg-slate-50/60 border border-slate-100 text-center rounded-2xl p-5 mb-8">
-          <p id="top-desc" class="text-slate-600 text-sm leading-relaxed font-normal"></p>
+          <p id="top-desc" class="text-slate-800 text-sm leading-relaxed font-normal"></p>
         </div>
 
         <div class="text-center mb-8">
@@ -139,10 +139,9 @@
         </div>
 
         <button onclick="window.location.reload()"
-          class="mt-6 w-full max-w-xs py-4 bg-[#0f172a] hover:bg-slate-800 text-white rounded-xl font-bold tracking-wide text-sm transition-all duration-300 shadow-md">
-          <i class="fa-solid fa-rotate-right mr-2 text-xs opacity-70"></i> Retake Analysis
+            class="mt-6 w-full max-w-xs py-4 bg-[#0f172a] hover:bg-blue-900 text-white rounded-xl font-bold tracking-wide text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300">
+            <i class="fa-solid fa-rotate-right mr-2 text-xs opacity-70 group-hover:rotate-180 transition-transform duration-500"></i> Retake Analysis
         </button>
-
       </div>
     </div>
   </div>
