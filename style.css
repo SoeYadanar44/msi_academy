@@ -43,14 +43,22 @@
 }
 .main-content-layout {
   flex: 1 1 0%;
-  max-w-5xl: 64rem;
-  width: 50%;
+  width: 100%;             /* Take full width on small screens */
+  max-width: 64rem;        /* Valid CSS property (equivalent to tailwind's max-w-5xl) */
   margin-left: auto;
   margin-right: auto;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;      /* Tighter vertical padding on mobile devices */
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* Tablet and Desktop Adjustments */
+@media (min-width: 768px) {
+  .main-content-layout {
+    width: 90%;            /* Adds comfortable breathing room on wider screens */
+    padding: 2rem 1rem;    /* Restores larger padding on desktop structures */
+  }
 }
 
 /* Ambient Blurs */
